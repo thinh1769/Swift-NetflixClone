@@ -10,6 +10,8 @@ import Foundation
 struct Constants {
     static let API_KEY = "697d439ac993538da4e3e60b54e762cd"
     static let baseURL = "https://api.themoviedb.org"
+    static let YoutubeAPI_KEY = "AIzaSyD0wUlNwmBOMfP-Xf66yTgVtCpK1La5HQQ"
+    static let YoutubeBaseURL = "https://youtube.googleapis.com/youtube/v3/search?"
 }
 
 enum APIError: Error {
@@ -135,8 +137,8 @@ class APICaller {
     }
     
     func search(with query: String, completion: @escaping (Result<[Title], Error>) -> Void) {
-        
-       // guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        //thêm các kí tự % vào chuỗi query cho phù hợp
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
         guard let url = URL(string: "\(Constants.baseURL)/3/search/movie?api_key=\(Constants.API_KEY)&query=\(query)") else {return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -154,6 +156,26 @@ class APICaller {
 
         }
         task.resume()
+    }
+    
+    func getMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
+        //thêm các kí tự % vào chuỗi query cho phù hợp
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        if let url = URL(string: "\(Constants.YoutubeBaseURL)q=\(query)&key=\(Constants.YoutubeAPI_KEY)") {
+            let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
+                    completion(.success(results.items[0]))
+
+                } catch {
+                    completion(.failure(APIError.failedToGetData))
+                }
+            }
+            task.resume()
+        }
     }
 }
 

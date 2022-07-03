@@ -53,8 +53,4 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
             return UICollectionViewCell()
         }
     }
-    
-   
-    
-    
 }
