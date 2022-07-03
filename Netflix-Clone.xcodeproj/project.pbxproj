@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4307461D7B43C7723462366C /* Pods_Netflix_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC5FDB3F73FBC136C9656B5 /* Pods_Netflix_Clone.framework */; };
+		82939502286C384C00A04DBD /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82939501286C384B00A04DBD /* TitleTableViewCell.swift */; };
+		82939504286C419000A04DBD /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82939503286C419000A04DBD /* TitleViewModel.swift */; };
+		82CEC3152870294700241CC1 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CEC3142870294700241CC1 /* SearchResultsViewController.swift */; };
 		ED228EF8286561EF0092F686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED228EF7286561EF0092F686 /* AppDelegate.swift */; };
 		ED228EFA286561EF0092F686 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED228EF9286561EF0092F686 /* SceneDelegate.swift */; };
 		ED228EFC286561EF0092F686 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED228EFB286561EF0092F686 /* MainTabBarViewController.swift */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		059773C0F0CA0723488DA2E2 /* Pods-Netflix-Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netflix-Clone.release.xcconfig"; path = "Target Support Files/Pods-Netflix-Clone/Pods-Netflix-Clone.release.xcconfig"; sourceTree = "<group>"; };
 		0EC5FDB3F73FBC136C9656B5 /* Pods_Netflix_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netflix_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82939501286C384B00A04DBD /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		82939503286C419000A04DBD /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		82CEC3142870294700241CC1 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		A5711FB04DD0A9E98C7C8739 /* Pods-Netflix-Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netflix-Clone.debug.xcconfig"; path = "Target Support Files/Pods-Netflix-Clone/Pods-Netflix-Clone.debug.xcconfig"; sourceTree = "<group>"; };
 		ED228EF4286561EF0092F686 /* Netflix-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED228EF7286561EF0092F686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,13 +72,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		82CEC3122870291800241CC1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED228F11286562860092F686 /* HomeViewController.swift */,
+				ED228F13286562A00092F686 /* UpcomingViewController.swift */,
+				ED228F15286562BC0092F686 /* SearchViewController.swift */,
+				ED228F17286562D40092F686 /* DownloadsViewController.swift */,
+				ED228EFB286561EF0092F686 /* MainTabBarViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		82CEC3132870292900241CC1 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				82CEC3142870294700241CC1 /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		DF8527F44B598DCB2E4141BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A5711FB04DD0A9E98C7C8739 /* Pods-Netflix-Clone.debug.xcconfig */,
 				059773C0F0CA0723488DA2E2 /* Pods-Netflix-Clone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,7 +130,6 @@
 				ED228F0B2865624C0092F686 /* Controllers */,
 				ED228EF7286561EF0092F686 /* AppDelegate.swift */,
 				ED228EF9286561EF0092F686 /* SceneDelegate.swift */,
-				ED228EFB286561EF0092F686 /* MainTabBarViewController.swift */,
 				ED228F00286561F10092F686 /* Assets.xcassets */,
 				ED228F02286561F10092F686 /* LaunchScreen.storyboard */,
 				ED228F05286561F10092F686 /* Info.plist */,
@@ -116,10 +140,8 @@
 		ED228F0B2865624C0092F686 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ED228F11286562860092F686 /* HomeViewController.swift */,
-				ED228F13286562A00092F686 /* UpcomingViewController.swift */,
-				ED228F15286562BC0092F686 /* SearchViewController.swift */,
-				ED228F17286562D40092F686 /* DownloadsViewController.swift */,
+				82CEC3122870291800241CC1 /* Core */,
+				82CEC3132870292900241CC1 /* General */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +149,7 @@
 		ED228F0C286562530092F686 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				82939503286C419000A04DBD /* TitleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,6 +160,7 @@
 				ED228F1B286563130092F686 /* CollectionViewTableViewCell.swift */,
 				ED228F19286562F40092F686 /* HeroHeaderUIView.swift */,
 				EDBFBF422865C1C300B1E715 /* TitleCollectionViewCell.swift */,
+				82939501286C384B00A04DBD /* TitleTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,8 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CEC3152870294700241CC1 /* SearchResultsViewController.swift in Sources */,
 				ED228F16286562BC0092F686 /* SearchViewController.swift in Sources */,
 				ED228F1A286562F40092F686 /* HeroHeaderUIView.swift in Sources */,
+				82939502286C384C00A04DBD /* TitleTableViewCell.swift in Sources */,
 				ED228EFC286561EF0092F686 /* MainTabBarViewController.swift in Sources */,
 				EDBFBF3D286593EB00B1E715 /* APICaller.swift in Sources */,
 				ED228F18286562D40092F686 /* DownloadsViewController.swift in Sources */,
@@ -288,6 +314,7 @@
 				ED228EFA286561EF0092F686 /* SceneDelegate.swift in Sources */,
 				ED228F14286562A00092F686 /* UpcomingViewController.swift in Sources */,
 				EDBFBF432865C1C300B1E715 /* TitleCollectionViewCell.swift in Sources */,
+				82939504286C419000A04DBD /* TitleViewModel.swift in Sources */,
 				EDBFBF3F2865A88C00B1E715 /* Title.swift in Sources */,
 				ED228F12286562860092F686 /* HomeViewController.swift in Sources */,
 			);
@@ -429,12 +456,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AQKCQ33V6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Netflix-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,12 +485,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AQKCQ33V6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Netflix-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

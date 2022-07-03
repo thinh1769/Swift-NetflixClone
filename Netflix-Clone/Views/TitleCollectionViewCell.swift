@@ -15,6 +15,7 @@ class TitleCollectionViewCell: UICollectionViewCell {
     private let posterImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -33,7 +34,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with model: String) {
-        guard let url = URL(string: model) else {return}
-        posterImageView.sd_setImage(with: url, completed: nil)
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model)") {
+            posterImageView.sd_setImage(with: url, completed: nil)
+        }
     }
 }
